@@ -10,6 +10,7 @@ locale: en_US
 
 ### Personal info and site tools info: 
 github_username:  marselia
+disqus_shortname:  disqus_5JCdvcneKW
 favicon:     "/images/favicon.ico"
 aboutme: "Hey, soy Celia. Aquí puedes encontrar un poquito de mí." # these are shown on aboutme-sidebar.
 aboutme_photo: "/images/favicon.ico"
