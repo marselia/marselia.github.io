@@ -2,19 +2,16 @@
 title: C:/
 tagline: Otro blog sobre seguridad informática
 author: Celia M
-email: 
 description: "Otro blog sobre seguridad informática" # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 keywords: "Jekyll, theme, marselia, cybersecurity"
 baseurl:  # the subpath of your site, e.g. /blog/
 url:  # the base hostname & protocol for your site
 locale: en_US
 
-### Personal info and site tools info:
-twitter_username: 
+### Personal info and site tools info: 
 github_username:  marselia
-disqus_shortname: 
 favicon:     "/images/favicon.ico"
-aboutme: "Hey, soy Celia. Me puedes encontrar en:" # these are shown on aboutme-sidebar.
+aboutme: "Hey, soy Celia. Aquí puedes encontrar un poquito de mí." # these are shown on aboutme-sidebar.
 aboutme_photo: "/images/favicon.ico"
 google_analytics_key: # put YOUR key here to enable tracking! (blank to disable)
 
