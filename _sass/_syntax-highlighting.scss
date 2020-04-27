@@ -1,3 +1,9 @@
+/**
+ * Syntax highlighting styles
+ */
+.highlight {
+    background: #fff;
+    @extend %vertical-rhythm;
 .hll { background-color: #ffffcc }
 .c { color: #408080; font-style: italic } /* Comment */
 .err { border: 1px solid #FF0000 } /* Error */
@@ -66,3 +72,4 @@
 .vi { color: #19177C } /* Name.Variable.Instance */
 .vm { color: #19177C } /* Name.Variable.Magic */
 .il { color: #666666 } /* Literal.Number.Integer.Long */
+}
