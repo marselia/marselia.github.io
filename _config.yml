@@ -5,8 +5,8 @@ author: Celia
 email: 
 description: "Freshman21 is a Jekyll blog theme." # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
 keywords: "Jekyll, theme, Cybersecurity"
-baseurl: "/blog" # the subpath of your site, e.g. /blog/
-url: "https://marselia.github.io/blog" # the base hostname & protocol for your site
+baseurl:  # the subpath of your site, e.g. /blog/
+url: "https://marselia.github.io" # the base hostname & protocol for your site
 locale: en_US
 
 ### Personal info and site tools info:
