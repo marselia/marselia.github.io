@@ -6,13 +6,14 @@
 
   {% if site.ShowContactInfo == "True" %}
 
-  Puedes encontrame en: <br />
+  You can contact me via: <br />
 
   
   {% if site.github_username != empty %}
   <a href="https://github.com/{{site.github_username}}" title="GithubID: {{site.github_username}}"><i class="fa fa-github-square fa-3x"></i></a>&nbsp;
   {% endif %}
-  
+  {% if site.linkedin_username != empty %}
+  <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn: {{ site.linkedin_username }}"> LinkedIn </a>      
   {% endif %}
-
+  {% endif %}
 </div>
