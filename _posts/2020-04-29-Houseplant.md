@@ -49,7 +49,7 @@ Other interesting tools:
 ## Forensics
 - Neko Hero: An image appears to us for analysis, we use stegsolve to solve it. ![alt text](https://github.com/marselia/marselia.github.io/blob/master/images/houseplant_fore.JPG)
 - Deep Lyrics: As the title says, we have to use deepsound to extract the file which contains the flag.
-- Ezoterik: The image shows strange characters, the title makes us think about Esoteric programming language https://en.wikipedia.org/wiki/Esoteric_programming_language which the characters look like Brainfuck: https://copy.sh/brainfuck/ and decoding it we don't get a successful result: "Yeah, no, sorry. So using the command strings we see a strange paragraph. Cyberchef detects it as Base58 and the result is a big amount of data, so converting the decimal numbers to ascii we get the flag.
+- Ezoterik: The image shows strange characters, the title makes us think about [Esoteric programming language](https://en.wikipedia.org/wiki/Esoteric_programming_language) which the characters look like [Brainfuck](https://copy.sh/brainfuck/) and decoding it we don't get a successful result: "Yeah, no, sorry. So using the command strings we see a strange paragraph. Cyberchef detects it as Base58 and the result is a big amount of data, so converting the decimal numbers to ascii we get the flag.
 - Vacation Pics: Using DIIT to get the second image. 
 
 ## Misc
@@ -62,5 +62,5 @@ Other interesting tools:
 - Groovin and Cubin: Searching in google the company, we found a twitter account, where it appears a fake hint and an Instagram account where the real flag is.
 
 ## Web
-- I don't like needles: It's a SQL injection. We investigate the source code and we find: <!-- ?sauce--> we go to url/?sauce where we see the user. We use sql injection to get the password, with: ' OR 0 = 0# we get a correct auth and with = 0# we get the flag.
+- I don't like needles: It's a SQL injection. We investigate the source code and we find: </!-- ?sauce--/> we go to url/?sauce where we see the user. We use sql injection to get the password, with: ' OR 0 = 0# we get a correct auth and with = 0# we get the flag.
 
