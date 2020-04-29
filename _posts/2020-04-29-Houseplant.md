@@ -10,7 +10,6 @@ tags: [houseplant, crypto, forensics, misc, OSINT]
 
 ## Begginers [1-9]:
 
-This section is a warm-up for the next categories.
 These challenges are cryptographic problems, so we have to use these types of encoding:
 
 - Base64
