@@ -25,7 +25,7 @@ These challenges are cryptographic problems, so we have to use these types of en
 The final challenge is a file with a coded message. In this case, we use CyberChef to load the file and to get the flag, we'll have to use several of the above conversion types. 
 We have used Base64>Hex>Morse>Binary>ROT13>A1Z26>Atbash>ROT13 to obtain the flag.
 
-![alt text](https://github.com/marselia/marselia.github.io/blob/master/images/houseplant_beg.JPG)
+![]({{ site.baseurl }}/images/houseplant_beg.JPG)
 
 Tools:
 - [CyberChef](https://gchq.github.io/CyberChef/)
@@ -43,18 +43,18 @@ Other interesting tools:
 - Fences are cool unless they're taller than you" - tida: In this case, the word fence gives us the hint, searching in the cyberchef we find the Rail Fence Cipher Decode, with Key=3 and Offset=1, we find the flag.
 - Post-Homework Death: It shows an array and a string, so the solution is to multiply these two, we can [use](https://matrix.reshish.com/multiplication.php). Result: 7 15 0 4 15 0 25 15 21 18 0 8 15 13 5 23 15 18 11 0 0. Googling we find https://www.instructables.com/id/Encrypt-a-message-using-matrixes/ - https://www.codewars.com/kata/5e83519136b284002487e3f9 where they indicate to use A1Z26. Flag: rtcp{go_do_your_homework}
 - Parasite:The word SKATS appears in "paraSite Killed me A liTtle inSide". Searching in wikipedia we find: "SKATS stands for Standard Korean Alphabet Transliteration System.  It is also known as Korean Morse equivalents.It also shows us a table to convert the result from morse to SKATS, that's why with cyberchef we decode the message in morse and with the table we convert it to [SKATS](https://www.branah.com/korean), the flag appears translating it to English.
-- 11: Having the hint "Hint!I was eleven when I finished A Series of Unfortunate Events" we google "I finished A Series of Unfortunate Events" and we find [Sebalt Decoder](http://vfdcafe.tripod.com/sebald.html) and using the decoder table, we get the flag in column 11. ![alt text](https://github.com/marselia/marselia.github.io/blob/master/images/houseplant_cry.JPG)
+- 11: Having the hint "Hint!I was eleven when I finished A Series of Unfortunate Events" we google "I finished A Series of Unfortunate Events" and we find [Sebalt Decoder](http://vfdcafe.tripod.com/sebald.html) and using the decoder table, we get the flag in column 11. ![]({{ site.baseurl }}/images/houseplant_cry.JPG)
 - .... .- .-.. ..-.....-... : Converting it to ASCII we get: 'Half' and searching in dcode.fr about morse types we get this [one](https://www.dcode.fr/fractionated-morse) which shows us the result of the ciphertext.
 
 ## Forensics
-- Neko Hero: An image appears to us for analysis, we use stegsolve to solve it. ![alt text](https://github.com/marselia/marselia.github.io/blob/master/images/houseplant_fore.JPG)
+- Neko Hero: An image appears to us for analysis, we use stegsolve to solve it. ![]({{ site.baseurl }}/images/houseplant_fore.JPG)
 - Deep Lyrics: As the title says, we have to use deepsound to extract the file which contains the flag.
 - Ezoterik: The image shows strange characters, the title makes us think about [Esoteric programming language](https://en.wikipedia.org/wiki/Esoteric_programming_language) which the characters look like [Brainfuck](https://copy.sh/brainfuck/) and decoding it we don't get a successful result: "Yeah, no, sorry. So using the command strings we see a strange paragraph. Cyberchef detects it as Base58 and the result is a big amount of data, so converting the decimal numbers to ascii we get the flag.
 - Vacation Pics: Using DIIT to get the second image. 
 
 ## Misc
 - Spilledc milk: We get a totally blank image, using stegsolve we get the result.
-- Musica Lab: We open the file with audacity and we find the flag. ![alt text](https://github.com/marselia/marselia.github.io/blob/master/images/houseplant_misc.JPG)
+- Musica Lab: We open the file with audacity and we find the flag. ![]({{ site.baseurl }}/images/houseplant_misc.JPG)
 
 ## OSINT
 - The Drummer who Gave all his Daughters the Same Name: Googling: https://www.giac.org/paper/gsec/644/malicious-code-vbs-onthefly-anna-kournikova/101208 -> Worm made with Vbswg 1.50b
