@@ -2,49 +2,12 @@
 layout: post
 title: HackPack CTF 2020
 categories: [Capture The Flag]
-tags: [hackpack, re, web, pwn, misc]
+tags: [hackpack, web, pwn, misc]
 
 ---
 
 [Hackpack](https://ctf2020.hackpack.club/challenges) is an educational CTF that aims to complement security courses at North Carolina State University. Date: vie, 17 abr. 2020, 17:00 UTC — mar, 28 abr. 2020, 03:59 UTC
 
-## Re
-- Time Window: First of all, view the page source:
-```
-...
-<script src="_sr_.js"></script>
-<script src="__.js"></script>
-...
-<h2>Time's running out, hurry!</h2>
-<form onsubmit="javascript:c();return false;" action="javascript:c();">
-	<input type="text" id="message" autocomplete="off" autofocus />
-</form>
-```
-We observe the function c() that belongs to __.js. In the JS, using https://beautifier.io/, we can see a method POST and the function.
-```
-...
-dn = Date.now
- x = rn % 2 == 0 ? lr : rr, y = rn % 2 != 0 ? lr : rr, cf(r) >= dn() - 6e4 ? fetch("/check", {
-            method: "POST",
-            mode: "same-origin", 
-...
-cf = function (r) {
-  try {
-    let e = Array.from(atob(rr(243, Array.from(r)))),
-    n = 1;
-    for (let r = 0; r < e.length; r++) r === n && (e.splice(r + 1, + e[r + 1] + 1), n += n);
-    return + lr(168, e)
-  } catch (r) {
-  }
-  return - 1
-},
-```
-We see that cf(r) must be greater or equal than Date.now+1764, so we choose 10000000000000. Using the cf=function(r), we can get the input for the website:
-
-```
-rr(168, Array.from("10000000000000")) ->"10000000000000"-> +4 zeros for e.splice() -> btoa("100000000000000000")
-lr(243, Array.from("MTAwMDAwMDAwMDAwMDAwMDAw")) -> wMDAwMDAwMDAwMDAwMDAwMTA is the input -> We can get the FLAG.
-```
 
 ## Web
 - Cookie Forge. When we log in, a cookie named session appears (this is the JWT). In the Flagship Loyalty section, we see this Warning: "You aren't a Flagship Loyalty Member! No cookies for you!!".
