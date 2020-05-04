@@ -74,4 +74,4 @@ require("child_process").exec("cat flag.txt", function(error, stdout, stderr){co
 ## Misc
 - Soundy: using a sstv decoder.
 ![]({{ site.baseurl }}/images/HackPack-sstv.jpeg)
--Listen up!: when we use the exiftool command, we get a comment with an [URL](https://www.youtube.com/watch?v=2xZgCVG_Bzk) about MS Paint EXE file. We need to convert the audio to RAW format (it is the uncompressed audio).
+- Listen up!: when we use the exiftool command, we get a comment with an [URL](https://www.youtube.com/watch?v=2xZgCVG_Bzk) about MS Paint EXE file. We need to convert the audio to RAW format (it is the uncompressed audio).
