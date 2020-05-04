@@ -12,4 +12,5 @@ For this reason, I have started my first blog.
 
 This blog has been created as a compilation of my daily learning. My main idea is to write information related to technology but giving a greater emphasis to cybersecurity.
 
-![See you!](https://github.com/marselia/marselia.github.io/blob/master/images/favicon.ico)
+![]({{ site.baseurl }}/images/favicon.ico)
+See you!
