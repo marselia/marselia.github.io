@@ -26,6 +26,7 @@ At this point, we'd just have to see what you'd like to implement. I leave you w
 
 - Authentication:
 First of all our main script must have our authentication part in order to use the Twitter API.
+
 ```
 import tweepy
 from secrets import * # secrets.py where you can see the Consumer Token, Consumer Token Secret, Access Token, and Access Token Secret.
@@ -38,16 +39,19 @@ api = tweepy.API(auth)
 Some examples:
 
 - Write a tweet: 
+
 ```
 api.update_status("This is a tweet")
 ```
 
 - Send a tweet with picture: 
+
 ```
 api.update_with_media(filepath)
 ```
 
 - Send a tweet with several images:
+
 ```
 images = (path+'\q.jpg',path+ '\qq.jpg')
 media_ids = [api.media_upload(i).media_id_string for i in images]
@@ -55,6 +59,7 @@ api.update_status(status='This is a tweet', media_ids=media_ids)
 ```
 
 - Send several tweets with an image and text
+
 ```
 #You could also do it with glob.glob(path+"*.jpg")
 files = [file for file in listdir(path) if isfile(join(path, file))]
@@ -63,6 +68,7 @@ for i in files:
 ```
 
 - RT, FAV and RT with comment:
+
 ```
 api.retweet(tweet.id)
 api.create_favorite(tweet.id)
@@ -70,6 +76,7 @@ api.update_status(“I like this tweet!! https://twitter.com/"+tweet.author._jso
 ```
 
 - Get mentions and reply them:
+
 ```
 for mention in tweepy.Cursor(api.mentions_timeline).items():
     print(mention.text)
@@ -80,6 +87,7 @@ for mention in tweepy.Cursor(api.mentions_timeline).items():
 
 - Send DMs:
 You can send a DM when someone new follows you.
+
 ```
 users = tweepy.Cursor(api.followers, screen_name=username, count=200).items()
 for user in users:    
@@ -88,6 +96,7 @@ for user in users:
 
 - Search tweets with a special word:
 See [Rules and Filtering](https://developer.twitter.com/en/docs/tweets/rules-and-filtering/overview/standard-operators).
+
 ```
 new_search = "Hello+world OR beautiful+cats -filter:retweets"    
     tweets = tweepy.Cursor(api.search,
@@ -99,6 +108,7 @@ for tweet in api.search(q=new_search, count=count):
 ```
 
 - Tweet information:
+
 ```
 user=str(tweet.author._json['screen_name'])
 location=str(tweet.author._json['location'])
@@ -109,6 +119,7 @@ print(user+" with "+rts+"RTS and "+favs+"FAVS https://twitter.com/"+user+"/statu
 ```
 
 - Get account information:
+
 ```
 user=api.get_user(screen_name = 'user')
 description=user.description
@@ -120,6 +131,7 @@ friends_count=user.friends_count
 
 - Get tweets from an account:
 You can save the latest tweet and keep saving tweets.
+
 ```
 f = open("accountdump.csv", "w")
 f.write('user,created_at,tweet,url,location\n')
@@ -136,6 +148,7 @@ except BaseException as e:
 
 - Get pictures from an account:
 You can add it in the previous loop.
+
 ```
 mediatw= set()
 
@@ -151,6 +164,7 @@ for media_file in mediatw:
 ```
 
 - Get the followers' names from an account and follow them:
+
 ```
 users = tweepy.Cursor(api.followers, screen_name=the_user, count=200).items()
 for user in users:
@@ -159,6 +173,7 @@ for user in users:
 ```
 
 - Get the account names that a user is following:
+
 ```
 users = tweepy.Cursor(api.friends, screen_name=the_user, count=300).items()
 for user in users:
