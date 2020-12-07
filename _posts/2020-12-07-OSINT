@@ -1,0 +1,15 @@
+---
+layout: post
+title: How to make a Twitter Bot in Python
+categories: [Programming]
+tags: [Twitter, bot, python, tweepy, OSINT]
+
+---
+
+One of the most used and important disciplines in the field of research and in computer security is obtaining information from open sources (OSINT, Open Source Intelligence).
+
+The process followed when we research is almost always the same: access to the huge amount of information that gives open source, select and filter what interests us, process and analyze it, document it and draw conclusions.
+
+In the professional field, this discipline is linked to the branches of security and journalism, although it can be useful for anyone who is interested in the world of investigation.
+
+This section will show some of the most commonly used techniques for information extraction, such as search strategies, source selection and information verification.
